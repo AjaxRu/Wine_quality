@@ -4,4 +4,4 @@
 # mypy cache
 .mypy_cache/
 
-__pycache__/ сд
+__pycache__/ 
