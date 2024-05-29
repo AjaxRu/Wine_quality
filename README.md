@@ -22,7 +22,7 @@
 cd Wine_quality```
 
 
-# Вариант 1: Использование Docker
+### Вариант 1: Использование Docker
 Шаг 1: Сборка и запуск контейнеров Docker
 Соберите и запустите контейнеры Docker с помощью Docker Compose:
 ```docker-compose up --build```
