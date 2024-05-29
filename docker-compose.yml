@@ -9,12 +9,14 @@ services:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
 
   train:
     build: .
-    command: python Wine_quality_model/train_pipeline.py
+    command: tail -f /dev/null  # Это предотвратит автоматический запуск тренировки
     volumes:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
 
