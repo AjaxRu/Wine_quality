@@ -32,7 +32,7 @@ docker-compose up --build
 
 Шаг 2 (опционально): Обучение модели
 В отдельном терминале выполните команду для запуска процесса обучения внутри контейнера Docker:
-docker-compose run train
+docker-compose run train python Wine_quality_model/train_pipeline.py
 
 Эта команда выполнит скрипт обучения Wine_quality_model/train_pipeline.py внутри контейнера.
 
