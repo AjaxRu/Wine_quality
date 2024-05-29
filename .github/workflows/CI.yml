@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04  # Обновленная версия Ubuntu
 
     services:
       docker:
@@ -30,7 +30,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10.3  
+          python-version: '3.10'  # Убедитесь, что версия Python указана в кавычках
 
       - name: Install dependencies
         run: |
@@ -64,11 +64,11 @@ jobs:
           DOCKER_HOST: tcp://localhost:2375
 
   cleanup:
-    runs-on: ubuntu-latest
-    if: always()
+    runs-on: ubuntu-20.04  # Обновленная версия Ubuntu
 
     steps:
       - name: Stop Docker Compose
         run: docker-compose down
         env:
           DOCKER_HOST: tcp://localhost:2375
+
