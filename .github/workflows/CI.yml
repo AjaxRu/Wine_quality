@@ -30,7 +30,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10
+          python-version: 3.10  # Убедитесь, что указана правильная версия Python
 
       - name: Install dependencies
         run: |
@@ -40,7 +40,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest
+          pytest --maxfail=5 --disable-warnings -v
 
       - name: Build Docker image
         run: |
@@ -49,6 +49,8 @@ jobs:
       - name: Run Docker Compose
         run: |
           docker-compose up --build -d
+        env:
+          DOCKER_HOST: tcp://localhost:2375
 
       - name: Check service health
         run: |
@@ -58,6 +60,8 @@ jobs:
       - name: Run model training
         run: |
           docker-compose run train
+        env:
+          DOCKER_HOST: tcp://localhost:2375
 
   cleanup:
     runs-on: ubuntu-latest
@@ -66,3 +70,5 @@ jobs:
     steps:
       - name: Stop Docker Compose
         run: docker-compose down
+        env:
+          DOCKER_HOST: tcp://localhost:2375
