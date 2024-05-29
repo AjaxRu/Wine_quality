@@ -47,10 +47,9 @@ jobs:
           docker build . -t wine_quality_app
 
       - name: Run Docker Compose
+        working-directory: ./  # Указываем директорию для выполнения команды
         run: |
           docker-compose up --build -d
-        env:
-          DOCKER_HOST: tcp://localhost:2375
 
       - name: Check service health
         run: |
@@ -60,15 +59,17 @@ jobs:
       - name: Run model training
         run: |
           docker-compose run train
-        env:
-          DOCKER_HOST: tcp://localhost:2375
 
   cleanup:
     runs-on: ubuntu-20.04  # Обновленная версия Ubuntu
+    if: always()
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Stop Docker Compose
+        working-directory: ./  # Указываем директорию для выполнения команды
         run: docker-compose down
-        env:
-          DOCKER_HOST: tcp://localhost:2375
+
 
