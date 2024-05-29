@@ -18,7 +18,7 @@
 
 Склонируйте репозиторий с GitHub:
 
-git clone https://github.com/your_username/Wine_quality.git
+git clone https://github.com/AjaxRu/Wine_quality.git
 cd Wine_quality
 
 
