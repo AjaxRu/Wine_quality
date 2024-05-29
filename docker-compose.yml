@@ -9,3 +9,12 @@ services:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
+
+  train:
+    build: .
+    command: python Wine_quality_model/train_pipeline.py
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+
