@@ -18,49 +18,48 @@
 
 Склонируйте репозиторий с GitHub:
 
-```bash
-git clone https://github.com/your_username/Wine_quality.git
-cd Wine_quality
+```git clone https://github.com/your_username/Wine_quality.git
+cd Wine_quality```
 
 
 # Вариант 1: Использование Docker
 Шаг 1: Сборка и запуск контейнеров Docker
 Соберите и запустите контейнеры Docker с помощью Docker Compose:
-docker-compose up --build
+```docker-compose up --build```
 
 Эта команда соберет образ Docker и запустит контейнер для вашего приложения.
 
 Шаг 2 (опционально): Обучение модели
 В отдельном терминале выполните команду для запуска процесса обучения внутри контейнера Docker:
-docker-compose run train
+```docker-compose run train```
 
 Эта команда выполнит скрипт обучения Wine_quality_model/train_pipeline.py внутри контейнера.
 
 Шаг 3: Доступ к приложению
 После запуска контейнеров вы можете получить доступ к приложению в веб-браузере по адресу:
-http://127.0.0.1:8000/
+```http://127.0.0.1:8000/```
 На этой странице вы сможете ввести характеристики вина и получить прогноз качества.
 
 # Вариант 2: Локальная установка и запуск без Docker
 Шаг 1: Создание и активация виртуального окружения
-python -m venv venv
-source venv/bin/activate  # На Windows: venv\Scripts\activate
+```python -m venv venv
+source venv/bin/activate  # На Windows: venv\Scripts\activate```
 Шаг 2: Установка зависимостей
-pip install -r requirements/requirements.txt
-pip install -r requirements/test_requirements.txt
+```pip install -r requirements/requirements.txt
+pip install -r requirements/test_requirements.txt```
 
 Шаг 3 (опционально): Обучение модели
 Выполните команду для обучения модели:
-python Wine_quality_model/train_pipeline.py
+```python Wine_quality_model/train_pipeline.py```
 
 Шаг 4: Запуск приложения
 Выполните команду для запуска FastAPI приложения:
-python app.py
+```python app.py```
 Шаг 5: Доступ к приложению
 Откройте браузер и перейдите по адресу:
-http://127.0.0.1:8000/
+```http://127.0.0.1:8000/```
 На этой странице вы сможете ввести характеристики вина и получить прогноз качества.
 
 Запуск тестов
 Для запуска тестов используйте следующую команду:
-pytest
+```pytest```
