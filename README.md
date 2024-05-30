@@ -6,7 +6,7 @@
 
 Эти инструкции помогут вам настроить и запустить проект на вашем локальном компьютере для разработки и тестирования.
 
-### Требования
+Требования
 
 Убедитесь, что у вас установлены следующие программы:
 
@@ -14,64 +14,64 @@
 - Docker
 - Docker Compose
 
-### Клонирование репозитория
+## Клонирование репозитория
 
 Склонируйте репозиторий с GitHub:
 
-git clone https://github.com/AjaxRu/Wine_quality.git
-cd Wine_quality
+`git clone https://github.com/AjaxRu/Wine_quality.git`
+`cd Wine_quality`
 
 
-# Вариант 1: Использование Docker
-Шаг 1: Сборка и запуск контейнеров Docker
+## Вариант 1: Использование Docker
+### Шаг 1: Сборка и запуск контейнеров Docker
 Запустите Docker Desktop
 Соберите и запустите контейнеры Docker с помощью Docker Compose:
-docker-compose up --build
+`docker-compose up --build`
 
 Эта команда соберет образ Docker и запустит контейнер для вашего приложения.
 
-Шаг 2 (опционально): Обучение модели
+### Шаг 2 (опционально): Обучение модели
 В отдельном терминале выполните команду для запуска процесса обучения внутри контейнера Docker:
-docker-compose run train python Wine_quality_model/train_pipeline.py
+`docker-compose run train python Wine_quality_model/train_pipeline.py`
 
 Эта команда выполнит скрипт обучения Wine_quality_model/train_pipeline.py внутри контейнера.
 
-Шаг 3: Доступ к приложению
+### Шаг 3: Доступ к приложению
 После запуска контейнеров вы можете получить доступ к приложению в веб-браузере по адресу:
-http://127.0.0.1:8000/
+`http://127.0.0.1:8000/`
 На этой странице вы сможете ввести характеристики вина и получить прогноз качества.
 
 Если вы хотите проверить активные сеансы Docker:
-docker ps
+`docker ps`
 Остановить контейнер(ы):
-docker stop <container_id>
-docker stop $(docker ps -q)
+`docker stop <container_id>`
+`docker stop $(docker ps -q)`
 
 Удалить контейнер(ы):
-docker rm <container_id>
-docker rm $(docker ps -a -q)
+`docker rm <container_id>`
+`docker rm $(docker ps -a -q)`
 
 
-# Вариант 2: Локальная установка и запуск без Docker
-Шаг 1: Создание и активация виртуального окружения
-python -m venv venv
-source venv/bin/activate  # На Windows: venv\Scripts\activate```
-Шаг 2: Установка зависимостей
-pip install -r requirements/requirements.txt
-pip install -r requirements/test_requirements.txt
+## Вариант 2: Локальная установка и запуск без Docker
+### Шаг 1: Создание и активация виртуального окружения
+`python -m venv venv`
+`venv\Scripts\activate`
+### Шаг 2: Установка зависимостей
+`pip install -r requirements/requirements.txt`
+`pip install -r requirements/test_requirements.txt`
 
-Шаг 3 (опционально): Обучение модели
+### Шаг 3 (опционально): Обучение модели
 Выполните команду для обучения модели:
-python Wine_quality_model/train_pipeline.py
+`python Wine_quality_model/train_pipeline.py`
 
-Шаг 4: Запуск приложения
+### Шаг 4: Запуск приложения
 Выполните команду для запуска FastAPI приложения:
-python app.py
-Шаг 5: Доступ к приложению
+`python app.py`
+### Шаг 5: Доступ к приложению
 Откройте браузер и перейдите по адресу:
-http://127.0.0.1:8000/
+`http://127.0.0.1:8000/`
 На этой странице вы сможете ввести характеристики вина и получить прогноз качества.
 
-Запуск тестов
+## Запуск тестов
 Для запуска тестов используйте следующую команду:
-pytest
+`pytest`
