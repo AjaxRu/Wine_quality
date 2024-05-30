@@ -55,8 +55,8 @@
 ## Вариант 2: Локальная установка и запуск без Docker
 ### Шаг 1: Создание и активация виртуального окружения
 `python -m venv venv`  
-`venv\Scripts\activate`
-'pip install -e .'  
+`venv\Scripts\activate`  
+`pip install -e .`  
 ### Шаг 2: Установка зависимостей
 `pip install -r requirements/requirements.txt`  
 `pip install -r requirements/test_requirements.txt`  
