@@ -64,7 +64,8 @@
 ### Шаг 3 (опционально): Обучение модели
 Выполните команду для обучения модели:  
 `python Wine_quality_model/train_pipeline.py`
-<img src="[https://i.imgur.com/ZWnhY9T.png](https://github.com/AjaxRu/Wine_quality/assets/145920622/10820ed0-ab65-4929-aae0-4186c8253cad)" width="250" height="250">
+![image](https://github.com/AjaxRu/Wine_quality/assets/145920622/1cb0e8e4-d5ea-49bf-9709-cbaee48592e6)![image](https://github.com/AjaxRu/Wine_quality/assets/145920622/fb4fe356-760e-43df-85e4-38bc9c47cbdf)
+
 
 ### Шаг 4: Запуск приложения
 Выполните команду для запуска FastAPI приложения:  
